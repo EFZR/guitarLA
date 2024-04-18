@@ -1,7 +1,8 @@
-import React from "react";
+import useCart from "../hooks/useCart";
 
-const Guitar = ({ guitarra, addToCart }) => {
+const Guitar = ({ guitarra }) => {
   const { name, image, description, price } = guitarra;
+  const { addToCart } = useCart();
 
   return (
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">

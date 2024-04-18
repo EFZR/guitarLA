@@ -1,17 +1,16 @@
-import { useMemo } from "react";
+import useCart from "../hooks/useCart";
 
-export default function Header({
-  cart,
-  removeFromCart,
-  increaseQuantity,
-  decreaseQuantity,
-  cleanCart,
-}) {
-  const isEmpty = useMemo(() => cart.length === 0, [cart]);
-  const cartTotal = useMemo(
-    () => cart.reduce((acc, guitarra) => acc + guitarra.price * guitarra.quantity, 0),
-    [cart]
-  );
+export default function Header() {
+  const {
+    isEmpty,
+    cartTotal,
+    cart,
+    addToCart,
+    removeFromCart,
+    increaseQuantity,
+    decreaseQuantity,
+    cleanCart,
+  } = useCart();
 
   return (
     <header className="py-5 header">
@@ -100,7 +99,10 @@ export default function Header({
                     </>
                   )
                 }
-                <button className="btn btn-dark w-100 mt-3 p-2" onClick={cleanCart}>
+                <button
+                  className="btn btn-dark w-100 mt-3 p-2"
+                  onClick={cleanCart}
+                >
                   Vaciar Carrito
                 </button>
               </div>
