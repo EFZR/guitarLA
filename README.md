@@ -20,5 +20,3 @@ To get a local copy up and running, follow these steps:
 1. Clone the repository
 2. Install the dependencies with `npm install`
 3. Start the local server with `npm run dev`
-
-## safe commit number 1
